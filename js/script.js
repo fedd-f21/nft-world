@@ -1,3 +1,4 @@
+// Pretend this data was fetched from the database
 const products = [
   {
     prodId: 1234,
@@ -106,6 +107,7 @@ const appendProduct = function(product) {
 
 // For each of the product Objects, run the callback function once
 products.forEach(appendProduct)
+
 
 
 
