@@ -22,7 +22,7 @@ const products = [
     },
     desc: `Here is a shot of this product that might entice a user to click and add it to their cart.`,
     rating: 4.2,
-    isAvailable: true,
+    isAvailable: false,
     isFavourite: false
   }, {
     prodId: 2345,
@@ -74,7 +74,7 @@ const products = [
     isFavourite: false
   }
 ]
-console.table(products)
+
 
 
 // Append a string of HTML the product, to get displayed as an element
@@ -84,12 +84,19 @@ const appendProduct = function(product) {
   //   return
   // }
 
+  // Ternary (means "3")
+  // const variable = (    ) ? ____ : ____
+
   document.querySelector(`#products`).innerHTML += `
-    <article class="product">
+    <article class="product ${(!product.isAvailable) ? `unavailable` : ``}">
       <header>
         <img src="img/${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
-        <data value="1.2"><span class="material-icons">diamond</span>ETH <del>${product.price.was}</del> <ins>${product.price.is}</ins></data>
+        <data value="1.2"><span class="material-icons">diamond</span>ETH ${
+          (product.price.was) 
+            ? `<del>${product.price.was}</del> <ins>${product.price.is}</ins>` 
+            : `<span>${product.price.is}</span>`
+        }</data>
         <p>${product.desc}</p>
         <dl>
           <dt>Rating</dt>
@@ -105,16 +112,32 @@ const appendProduct = function(product) {
   `
 }
 
+// Filter by price
+const maxPrice = 12
+const prodName = `a`
+
 // For each of the product Objects, run the callback function once
-products.forEach(appendProduct)
+products
+  .filter(product => product.price.is < maxPrice)
+  .filter(product => product.name.toUpperCase().includes(prodName.toUpperCase()))
+  .forEach(appendProduct)
 
 
+// What we have so far...
+// 1. Data
+// 2. A function to print an item of data
+// 3. Filter and execute the print
+
+// Also...
+// - Make sure you're styling the UI as well
+// 
 
 /*
 // This week:
 - "falsy"
 - Ternary operator (inline binary condition w/ return value)
   - and omitting {} from conditions
+  - Variable scoping within a condition
 - filter()
 - arrow functions
 - chaining
@@ -132,6 +155,7 @@ products.forEach(appendProduct)
 - fetch
 - async/await
 - JSON
+- Make it play
 */
 
 
