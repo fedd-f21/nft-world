@@ -110,20 +110,29 @@ products.forEach(appendProduct)
 
 
 
-// For the remaining period:
-// - Put your playlist data into JS
-// - Iterate over each item
-// - Build an element for each
-// - Do some styling
-// - Check in with me
-// - Have a great day!
-
-
-/* NEXT WEEK:
-- Ternary operator (inline condition)
-- map() vs forEach()
+/*
+// This week:
+- "falsy"
+- Omitting {} from conditions
+- Ternary operator (inline binary condition w/ return value)
 - filter()
+- arrow functions
+- chaining
+- Strings
+
+// Next:
+- Modules
+- Form submit and values
+- map() vs forEach()
 - data-*=""
+- Event delegation
+- Media events
+
+// Then:
+- fetch
+- async/await
+- JSON
 */
+
 
 
