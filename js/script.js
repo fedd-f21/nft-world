@@ -2,7 +2,7 @@
 const products = [
   {
     prodId: 1234,
-    name: `Crypto Punk #1234`,
+    name: `#1234 (Sally)`,
     image: `1.png`,
     price: {
       was: 11.2,
@@ -14,7 +14,7 @@ const products = [
     isFavourite: false,
   }, {
     prodId: 345,
-    name: `Crypto Punk #345`,
+    name: `#345 (Sandy)`,
     image: `2.png`,
     price: {
       was: false,
@@ -26,7 +26,7 @@ const products = [
     isFavourite: false
   }, {
     prodId: 2345,
-    name: `Crypto Punk #2345`,
+    name: `#2345 (Peter)`,
     image: `3.png`,
     price: {
       was: false,
@@ -38,7 +38,7 @@ const products = [
     isFavourite: true
   }, {
     prodId: 3345,
-    name: `Crypto Punk #3345`,
+    name: `#3345 (Allen)`,
     image: `4.png`,
     price: {
       was: 12,
@@ -50,7 +50,7 @@ const products = [
     isFavourite: false
   }, {
     prodId: 4221,
-    name: `Crypto Punk #4221`,
+    name: `#4221 (Grace)`,
     image: `5.png`,
     price: {
       was: 9,
@@ -62,7 +62,7 @@ const products = [
     isFavourite: false
   }, {
     prodId: 136,
-    name: `Crypto Punk #136`,
+    name: `#136 (Ada)`,
     image: `6.png`,
     price: {
       was: false,
@@ -113,13 +113,12 @@ products.forEach(appendProduct)
 /*
 // This week:
 - "falsy"
-- Omitting {} from conditions
 - Ternary operator (inline binary condition w/ return value)
+  - and omitting {} from conditions
 - filter()
 - arrow functions
 - chaining
-- Strings
-- CHECK PROGRESS
+- Strings methods
 
 // Next:
 - Modules
