@@ -119,6 +119,7 @@ products.forEach(appendProduct)
 - arrow functions
 - chaining
 - Strings
+- CHECK PROGRESS
 
 // Next:
 - Modules
