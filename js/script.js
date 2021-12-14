@@ -75,8 +75,6 @@ const products = [
   }
 ]
 
-
-
 // Append a string of HTML the product, to get displayed as an element
 const appendProduct = function(product) {
 
@@ -98,7 +96,7 @@ const appendProduct = function(product) {
         <a href="#">see more</a>
       </header>
       <footer>
-        <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+        <button type="button" class="add-to-cart" data-prodid="${product.prodId}"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
         <button type="button"><span class="material-icons">favorite</span></button>
       </footer>
     </article>
@@ -107,43 +105,59 @@ const appendProduct = function(product) {
 
 
 
-
 // Filter by product
 const filterByProduct = function() {
   // Collect the form filter values
-  const maxPrice = document.querySelector(`#maxPrice`).value
+  const maxPrice = document.querySelector(`#maxPrice`).value || 99999
   const prodName = document.querySelector(`#searchName`).value
+
 
   // Prevent the products from accumulating
   document.querySelector(`#products`).innerHTML = ``
 
   // For each of the product Objects, run the callback function once
   products
-    .filter(product => product.price.is < maxPrice)
+    .filter(product => product.price.is <= maxPrice)
     .filter(product => product.name.toUpperCase().includes(prodName.toUpperCase()))
     .forEach(appendProduct)
 }
 
 
+// Add to cart functionality (making dynamic content functional)
+document.querySelector(`#products`).addEventListener(`click`, function(event) {
+  // If we click something inside of the button (an icon, perhaps), still make the button the target
+  const theTarget = event.target.closest(`button`)
+
+  // if the event.target (what was clicked) is an `.add-to-cart` button...
+  if (theTarget && thetheTargetBtn.matches(`.add-to-cart`)) {
+    console.log(`Add item ${theTarget.dataset.prodid} to cart!`)
+  }
+})
+
+
 // Detect the `submit` event
-const filterForm = document.querySelector(`#filterProducts`)
-filterForm.addEventListener(`submit`, function(event) {
+document.querySelector(`#filterProducts`).addEventListener(`submit`, function(event) {
   // Prevent the browser from redirecting
   event.preventDefault()
 
   filterByProduct()
 })
 
+// Detect changes to the number stepper
+document.querySelector(`#maxPrice`).addEventListener(`change`, function(event) {
+  filterByProduct()
+})
 
-// Show the products before filtering
+// Detect any input to the search field
+document.querySelector(`#searchName`).addEventListener(`input`, function(event) {
+  filterByProduct()
+})
+
+// Show the products before filtering (when the document loads)
 window.addEventListener(`load`, function(event) {
   filterByProduct()
 })
 
-
-// Compare `input` and `change` events for an <input> and trigger the filter
-
-  
 
 
 
