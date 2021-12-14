@@ -141,7 +141,7 @@ window.addEventListener(`load`, function(event) {
 })
 
 
-
+// Compare `input` and `change` events for an <input> and trigger the filter
 
   
 
