@@ -80,13 +80,6 @@ const products = [
 // Append a string of HTML the product, to get displayed as an element
 const appendProduct = function(product) {
 
-  // if (!product.isAvailable) {
-  //   return
-  // }
-
-  // Ternary (means "3")
-  // const variable = (    ) ? ____ : ____
-
   document.querySelector(`#products`).innerHTML += `
     <article class="product ${(!product.isAvailable) ? `unavailable` : ``}">
       <header>
@@ -113,7 +106,7 @@ const appendProduct = function(product) {
 }
 
 // Filter by price
-const maxPrice = 12
+const maxPrice = 9
 const prodName = `a`
 
 // For each of the product Objects, run the callback function once
@@ -123,39 +116,25 @@ products
   .forEach(appendProduct)
 
 
-// What we have so far...
-// 1. Data
-// 2. A function to print an item of data
-// 3. Filter and execute the print
 
-// Also...
-// - Make sure you're styling the UI as well
-// 
 
+
+
+  
 /*
-// This week:
-- "falsy"
-- Ternary operator (inline binary condition w/ return value)
-  - and omitting {} from conditions
-  - Variable scoping within a condition
-- filter()
-- arrow functions
-- chaining
-- Strings methods
-
-// Next:
-- Modules
+// Today:
 - Form submit and values
-- map() vs forEach()
 - data-*=""
 - Event delegation
 - Media events
 
 // Then:
+- Modules
 - fetch
 - async/await
 - JSON
-- Make it play
+- map() vs forEach()
+- Sort
 */
 
 
