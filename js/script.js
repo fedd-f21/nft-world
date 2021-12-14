@@ -105,22 +105,37 @@ const appendProduct = function(product) {
   `
 }
 
-// Filter by price
-const maxPrice = 9
-const prodName = `a`
-
-// For each of the product Objects, run the callback function once
-products
-  .filter(product => product.price.is < maxPrice)
-  .filter(product => product.name.toUpperCase().includes(prodName.toUpperCase()))
-  .forEach(appendProduct)
 
 
 
+// 1. Detect the event
+const filterForm = document.querySelector(`#filterProducts`)
 
+filterForm.addEventListener(`submit`, function(event) {
+  // 2. Prevent the browser from redirecting
+  event.preventDefault()
+
+  // 3. Collect the values
+  const maxPrice = document.querySelector(`#maxPrice`).value
+  const prodName = document.querySelector(`#searchName`).value
+
+  // For each of the product Objects, run the callback function once
+  products
+    .filter(product => product.price.is < maxPrice)
+    .filter(product => product.name.toUpperCase().includes(prodName.toUpperCase()))
+    .forEach(appendProduct)
+})
+
+
+// A. Show the products before filtering
+// B. Prevent the products from accumulating
 
 
   
+
+
+
+
 /*
 // Today:
 - Form submit and values
@@ -135,6 +150,7 @@ products
 - JSON
 - map() vs forEach()
 - Sort
+- Pagination
 */
 
 

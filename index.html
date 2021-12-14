@@ -48,13 +48,18 @@
       </header>
 
       <!-- Filtering product form -->
-      <form class="filters">
+      <form class="filters" name="filterProducts" id="filterProducts">
         <h2>Filters</h2>
         <div class="filter-fields">
           <fieldset>
             <legend hidden>Display Order</legend>
             <label for="searchName">Name</label>
             <input type="search" name="searchName" id="searchName">
+          </fieldset>
+          <fieldset>
+            <legend hidden></legend>
+            <label for="maxPrice">Max Price</label>
+            <input type="number" name="maxPrice" id="maxPrice" value="10">
           </fieldset>
           <fieldset>
             <legend hidden>Display Order</legend>
@@ -69,19 +74,21 @@
             <legend hidden>Layout View</legend>
             <ul class="filter-list">
               <li>
-                <input type="radio" name="rating" value="4" id="aboveFour">
-                <label for="aboveFour">
+                <input type="radio" name="layout" value="cols" id="layoutCols">
+                <label for="layoutCols">
                   <span class="material-icons">view_compact_alt</span>
                 </label>
               </li>
               <li>
-                <input type="radio" name="rating" value="3" id="aboveThree">
-                <label for="aboveThree">
+                <input type="radio" name="layout" value="rows" id="layoutRows">
+                <label for="layoutRows">
                   <span class="material-icons">view_agenda</span>
                 </label>
               </li>
             </ul>
           </fieldset>
+
+          <button type="submit">Filter</button>
         </div>
       </form>
 
